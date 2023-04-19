@@ -1,0 +1,12 @@
+---
+import DefaultPageLayout from "layouts/default.astro";
+import Vacancies from "components/vacancies/Vacancies";
+
+const title = "Vacancies parser";
+const description =
+  "Test vacancies parsing based on users occupation";
+---
+
+<DefaultPageLayout content={{ title, description }}>
+  <Vacancies client:load/>
+</DefaultPageLayout>

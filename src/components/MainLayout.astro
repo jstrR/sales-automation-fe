@@ -1,0 +1,18 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import Header from "./Header.astro";
+---
+
+<BaseLayout>
+  <br class="my-4" />
+  <Header />
+  <div class="content">
+    <slot />
+  </div>
+</BaseLayout>
+
+<style>
+  .content {
+    min-height: 580px;
+  }
+</style>

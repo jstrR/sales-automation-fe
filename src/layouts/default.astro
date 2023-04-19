@@ -1,0 +1,37 @@
+---
+import MainLayout from "components/MainLayout.astro";
+const { content } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Sales Automation</title>
+    <meta name="description" content="Sales Automation Initiative"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="shortcut icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  </head>
+  <MainLayout>
+    {
+      content && (
+        <div class="page__header">
+          <h1 class="page__title">{content.title}</h1>
+          <h5 class="page__desc">{content.description}</h5>
+        </div>
+      )
+    }
+    <slot />
+  </MainLayout>
+  <style>
+    .page__header {
+      @apply py-4 mb-1;
+    }
+    .page__title {
+      @apply text-5xl font-extrabold text-theme-primary dark:text-theme-dark-primary;
+    }
+    .page__desc {
+      @apply text-gray-400;
+    }
+  </style>
+</html>
